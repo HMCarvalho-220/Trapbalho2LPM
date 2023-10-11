@@ -37,7 +37,6 @@ public class Main {
         }
 
         if (!grafo.getVertices().isEmpty()) {
-            // Obtém as recomendações de visitação usando DFS
             ArrayList<Cidade> recomendacoes = grafo.dfs(grafo.getVertices().get(0));
 
             // Imprime as recomendações
@@ -45,20 +44,16 @@ public class Main {
             for (Cidade cidadeRecomendada : recomendacoes) {
                 System.out.println("- " + cidadeRecomendada.getNome());
             }
-
-            // Obtém as cidades inacessíveis
             ArrayList<Cidade> inacessiveis = grafo.cidadesInacessiveis(grafo.getVertices().get(0));
 
-            // Imprime as cidades inacessíveis
+            // Cidades inacessíveis
             System.out.println("Cidades inacessíveis:");
             for (Cidade cidadeInacessivel : inacessiveis) {
                 System.out.println("- " + cidadeInacessivel.getNome());
             }
-
-            // Obtém a rota mais curta que visita todas as cidades e retorna à cidade inicial
             ArrayList<Cidade> rotaMaisCurta = grafo.rotaMaisCurta(grafo.getVertices().get(0));
 
-            // Imprime a rota mais curta
+            // Rota mais curta
             System.out.println("Rota mais curta a partir da " + grafo.getVertices().get(0).getNome() + ":");
             for (Cidade cidade : rotaMaisCurta) {
                 System.out.println("- " + cidade.getNome());
